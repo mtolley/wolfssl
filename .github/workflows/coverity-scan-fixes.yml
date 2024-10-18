@@ -1,4 +1,4 @@
-name: Coverity Scan master branch on a daily basis
+name: Run CodeQL Scan
 
 on:
   workflow_dispatch:

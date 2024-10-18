@@ -1,0 +1,18 @@
+name: Coverity Scan master branch on a daily basis
+
+on:
+  workflow_dispatch:
+
+jobs:
+  code-scan:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: master
+
+    - name: Configure wolfSSL
+      run: |
+        ./autogen.sh
+        ./configure --enable-all
+
